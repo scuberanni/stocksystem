@@ -1,0 +1,69 @@
+{% extends 'blank_layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="m-3">
+  <section class="container-fluid bg-primary rounded-4  ">
+    <div class="row mt-2  pt-2" >
+      <DIV class="COL-12 mt-2"><h2>List of Products</h2></DIV>
+      <div class="col-12 col-md-12 mt-2">
+  
+  
+        <table class="table table-hover table-info table-striped table-bordered border-dark ">
+          <thead class="table-dark text-center">
+            <tr>
+  
+              <th scope="col">CODE</th>
+              <th scope="col">STATUS</th>
+              <th scope="col">Pr_DATE</th>
+              <th scope="col">SL_DATE</th>
+              <th scope="col">NAME</th>
+              <th scope="col">SIZE</th>
+              <th scope="col">COLOR</th>
+              <th scope="col">MATERIAL</th>
+              <th scope="col">PRIZE</th>
+              <th scope="col">Details</th>
+  
+            </tr>
+          </thead>
+  
+  
+          <tbody>
+            {% for product_obj in prod %}
+            <tr>
+  
+  
+              <td> <a style="text-decoration: none ; " href="{% url 'edit' product_obj.id %}">
+                  {{product_obj.code |upper}}</a></td>
+              <td>{{product_obj.status |upper}}</td>
+              <td>{{product_obj.pr_date |date:"d-m-Y"}}</td>
+              <td>{{product_obj.sl_date |date:"d-m-Y"}}</td>
+              <td>{{product_obj.name |upper}}</td>
+              <td>{{product_obj.size |upper}}</td>
+              <td>{{product_obj.color |upper}}</td>
+              <td>{{product_obj.material |upper}}</td>
+              <td>{{product_obj.prize |upper}}</td>
+              <td class="d-flex justify-content-center">
+                <button type="button" class="cancelbtn bg-primary"><a
+                    style="text-decoration: none ;-webkit-text-fill-color: azure; "
+                    href="{% url 'details' product_obj.id %}">Details</a></button>
+  
+  
+              </td>
+  
+            </tr>
+            {% endfor %}
+  
+        </table>
+  
+      </div>
+  
+    </div>
+  
+  </section>
+</div>
+
+
+
+
+{% endblock %}
