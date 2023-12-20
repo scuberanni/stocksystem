@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'scube.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':'scube_ss',
         'HOST':'localhost',
-        'PORT':'5432',
-        'USER':'postgres',
+        'PORT':'8000',
+        'USER':'root',
         'PASSWORD':'sinan2585'
     }
 }
