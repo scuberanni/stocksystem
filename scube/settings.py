@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':'scube_ss',
         'HOST':'localhost',
-        'PORT':'8000',
+        'PORT':'5432',
         'USER':'root',
         'PASSWORD':'sinan2585'
     }
